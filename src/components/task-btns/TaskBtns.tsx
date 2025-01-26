@@ -1,11 +1,24 @@
 import { RiDeleteBin2Line } from 'react-icons/ri'
 import { SlRefresh } from 'react-icons/sl'
 import styles from './TaskBtns.module.css'
-const TaskBtns = ({ deleteCompletedTask, deleteAllTasks }) => {
+import Button from '../ui/Button.module'
+const TaskBtns = ({
+	deleteCompletedTask,
+	deleteAllTasks,
+	comletedTasksExist,
+}) => {
 	return (
 		<div className={styles.btns}>
-			<SlRefresh onClick={() => deleteAllTasks()} className={styles.btn} />
-			<RiDeleteBin2Line onClick={() => deleteCompletedTask()} className={styles.btn} />
+			<Button onClick={() => deleteAllTasks()} className={styles.btn}>
+				<SlRefresh />
+			</Button>
+			<Button
+				onClick={() => deleteCompletedTask()}
+				className={styles.btn}
+				disabled={!comletedTasksExist}
+			>
+				<RiDeleteBin2Line />
+			</Button>
 		</div>
 	)
 }

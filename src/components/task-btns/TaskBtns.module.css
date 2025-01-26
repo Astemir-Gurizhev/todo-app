@@ -17,3 +17,7 @@
 .btn:hover {
 	background-color: #161616;
 }
+.btn:disabled:hover {
+	background-color: #8f8e8e;
+	cursor: no-drop;
+}

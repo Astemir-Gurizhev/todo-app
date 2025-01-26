@@ -38,6 +38,9 @@ const Todo = () => {
 		setTasks([])
 	}
 
+	const completedTasksCounter = tasks.filter(task => task.isCompleted).length
+
+
 	return (
 		<>
 			<h1>Todo App</h1>
@@ -45,6 +48,7 @@ const Todo = () => {
 
 			{tasks.length > 0 && (
 				<TaskBtns
+					comletedTasksExist={!!completedTasksCounter}
 					deleteCompletedTask={deleteCompletedTaskHandler}
 					deleteAllTasks={deleteAllTasksHandler}
 				/>

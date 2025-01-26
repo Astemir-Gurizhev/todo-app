@@ -45,6 +45,12 @@ button {
 button:hover {
 	border-color: #fff;
 }
+button:disabled {
+	background-color: #8f8e8e;
+}
+button:disabled:hover {
+	border: 1px solid transparent;
+}
 
 input {
 	border-radius: 8px;
