@@ -20,9 +20,14 @@
 .right {
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: 20px;
 }
 .right img {
 	width: 15px;
 	cursor: pointer;
+	transition: 0.8s;
+}
+
+.right img:hover {
+	transform: scale(1.5);
 }
