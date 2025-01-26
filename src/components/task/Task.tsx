@@ -3,17 +3,25 @@ import { RiDeleteBin2Line, RiTornadoLine } from 'react-icons/ri'
 import { ITask } from '../../types/task.types'
 import styles from './Task.module.css'
 
-const Task = ({task, deleteTask }:ITask) => {
+const Task = ({ task, deleteTask, deleteCompletedTask, toggleTask }: ITask) => {
 	return (
-		<div onDoubleClick={() => deleteTask(task.id)} className={styles.task}>
+		<div
+			className={`${styles.task} ${task.isCompleted ? styles.completed : ''} `}
+		>
 			<div className={styles.left}>
 				<RiTornadoLine className={styles.todo} />
 				<p>{task.text}</p>
 			</div>
 
 			<div className={styles.right}>
-				<RiDeleteBin2Line className={styles.delete} onClick={() => deleteTask(task.id)}/>
-				<FaRegCheckCircle className={styles.check}/>
+				<RiDeleteBin2Line
+					className={styles.delete}
+					onClick={() => deleteTask(task.id)}
+				/>
+				<FaRegCheckCircle
+					onClick={() => toggleTask(task.id)}
+					className={styles.check}
+				/>
 			</div>
 		</div>
 	)

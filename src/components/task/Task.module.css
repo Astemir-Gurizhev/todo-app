@@ -2,11 +2,16 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	
+
 	background-color: #1a1a1a;
 	padding: 0 30px;
 	border-radius: 10px;
 }
+
+.task.completed {
+	border: 1px solid green;
+}
+
 .left {
 	display: flex;
 	align-items: center;
@@ -14,7 +19,6 @@
 }
 .todo {
 	margin-top: 3px;
-	
 }
 
 .right {
@@ -22,7 +26,6 @@
 	align-items: center;
 	gap: 10px;
 }
-
 
 .delete {
 	color: red;

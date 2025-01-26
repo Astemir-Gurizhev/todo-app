@@ -13,9 +13,7 @@
 	cursor: pointer;
 	transition: 0.8s;
 	color: white;
-
 }
 .btn:hover {
 	background-color: #161616;
-
 }
