@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid'
 import TaskForm from '../TaskForm/TaskForm'
 import TaskList from '../TaskList/TaskList'
 import TaskBtns from '../task-btns/TaskBtns'
+import TaskCompleted from '../task-completed/TaskCompleted'
 
 const Todo = () => {
 	const [tasks, setTasks] = useState([])
@@ -59,6 +60,8 @@ const Todo = () => {
 				deleteTask={deleteTaskHandler}
 				toggleTask={toggleTaskHandler}
 			/>
+
+			<TaskCompleted comletedTasksExist={completedTasksCounter}/>
 		</>
 	)
 }

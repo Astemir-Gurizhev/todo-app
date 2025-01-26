@@ -18,10 +18,10 @@ const TaskForm = ({ addTask }): string => {
 			<input
 				value={text}
 				onChange={e => setText(e.target.value)}
-				placeholder='Enter new todo'
+				placeholder='Введите новую задачу'
 				type='text'
 			/>
-			<button>Submit</button>
+			<button>Создать</button>
 		</form>
 	)
 }
