@@ -1,11 +1,11 @@
 import CreateTask from '../create-task/CreateTask'
-import Task from '../task/Task'
+import Tasks from '../tasks/Tasks'
 
 const Todo = () => {
 	return <>
 		<h1>Todo App</h1>
 		<CreateTask />
-		<Task />
+		<Tasks />
 	</>
 }
 export default Todo
