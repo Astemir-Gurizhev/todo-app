@@ -1,12 +1,21 @@
 import { FaRegCheckCircle } from 'react-icons/fa'
 import { RiDeleteBin2Line, RiTornadoLine } from 'react-icons/ri'
-import { ITask } from '../../types/task.types'
 import styles from './Task.module.css'
+
+interface ITask {
+	task: {
+		id: string
+		text: string
+		isCompleted: boolean
+	}
+	deleteTask: (id: string) => void
+	toggleTask: (id: string) => void
+}
 
 const Task = ({ task, deleteTask, toggleTask }: ITask) => {
 	return (
 		<div
-			className={`${styles.task} ${task.isCompleted ? styles.completed : ''} `}
+			className={`${styles.task} ${task.isCompleted ? styles.completed : ''}`}
 		>
 			<div className={styles.left}>
 				<RiTornadoLine className={styles.todo} />
@@ -26,4 +35,5 @@ const Task = ({ task, deleteTask, toggleTask }: ITask) => {
 		</div>
 	)
 }
+
 export default Task

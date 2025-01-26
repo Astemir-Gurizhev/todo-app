@@ -1,13 +1,17 @@
 import { FormEventHandler, useState } from 'react'
 import styles from './TaskForm.module.css'
 
-const TaskForm = ({ addTask }): string => {
+interface Props {
+	addTask: (text: string) => void
+}
+
+const TaskForm = ({ addTask }: Props) => {
 	const [text, setText] = useState('')
 
 	const onSubmitHandler: FormEventHandler<HTMLFormElement> = e => {
 		e.preventDefault()
 
-		if (text == '') return
+		if (text.trim() === '') return
 
 		addTask(text)
 		setText('')
@@ -25,4 +29,5 @@ const TaskForm = ({ addTask }): string => {
 		</form>
 	)
 }
+
 export default TaskForm

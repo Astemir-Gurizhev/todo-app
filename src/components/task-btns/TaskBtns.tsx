@@ -1,12 +1,19 @@
 import { RiDeleteBin2Line } from 'react-icons/ri'
 import { SlRefresh } from 'react-icons/sl'
-import styles from './TaskBtns.module.css'
 import Button from '../ui/Button.module'
+import styles from './TaskBtns.module.css'
+
+interface IProps {
+	deleteCompletedTask: () => void
+	deleteAllTasks: () => void
+	comletedTasksExist: boolean
+}
+
 const TaskBtns = ({
 	deleteCompletedTask,
 	deleteAllTasks,
 	comletedTasksExist,
-}) => {
+}: IProps) => {
 	return (
 		<div className={styles.btns}>
 			<Button onClick={() => deleteAllTasks()} className={styles.btn}>
@@ -22,4 +29,5 @@ const TaskBtns = ({
 		</div>
 	)
 }
+
 export default TaskBtns
