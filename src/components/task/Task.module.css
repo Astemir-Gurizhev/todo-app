@@ -1,0 +1,28 @@
+.task {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	background-color: #1a1a1a;
+	padding: 0 30px;
+	border-radius: 10px;
+}
+.left {
+	display: flex;
+	align-items: center;
+
+	gap: 5px;
+}
+.left img {
+	width: 20px;
+}
+
+.right {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.right img {
+	width: 15px;
+	cursor: pointer;
+}
