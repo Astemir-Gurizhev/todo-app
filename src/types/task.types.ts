@@ -1,7 +1,5 @@
-import { MouseEventHandler } from 'react'
-
 export interface ITask {
+	id: number
 	text: string
-	index: number
-	onClick: MouseEventHandler<HTMLImageElement>
+	isCompleted: boolean
 }

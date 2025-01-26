@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 import TaskForm from '../TaskForm/TaskForm'
 import TaskList from '../TaskList/TaskList'
 import TaskBtns from '../task-btns/TaskBtns'
@@ -6,12 +7,17 @@ import TaskBtns from '../task-btns/TaskBtns'
 const Todo = () => {
 	const [tasks, setTasks] = useState([])
 
-	const addTaskHandler = newTask => {
+	const addTaskHandler = text => {
+		const newTask = {
+			id: uuidv4(),
+			text,
+			isCompleted: false
+		}
 		setTasks([...tasks, newTask])
 	}
 
-	const deleteTaskHandler = index => {
-		setTasks(tasks.filter((_, i)=> i !== index))
+	const deleteTaskHandler = (id)=> {
+		setTasks(tasks.filter((task)=> task.id !== id))
 	}
 
 	const deleteAllTasksHandler = () => {

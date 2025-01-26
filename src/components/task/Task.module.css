@@ -10,24 +10,38 @@
 .left {
 	display: flex;
 	align-items: center;
-
-	gap: 5px;
+	gap: 10px;
 }
-.left img {
-	width: 20px;
+.todo {
+	margin-top: 3px;
+	
 }
 
 .right {
 	display: flex;
 	align-items: center;
-	gap: 20px;
+	gap: 10px;
 }
-.right img {
+
+
+.delete {
+	color: red;
 	width: 15px;
 	cursor: pointer;
 	transition: 0.8s;
 }
 
-.right img:hover {
+.delete:hover {
+	transform: scale(1.5);
+}
+
+.check {
+	color: green;
+	width: 15px;
+	cursor: pointer;
+	transition: 0.8s;
+}
+
+.check:hover {
 	transform: scale(1.5);
 }

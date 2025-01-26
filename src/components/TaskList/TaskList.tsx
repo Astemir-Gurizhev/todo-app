@@ -4,7 +4,9 @@ const TaskList = ({ tasks, deleteTask }) => {
 	return (
 		<div className={styles.list}>
 			{tasks.length ? (
-				tasks.map((task, i) => <Task deleteTask={deleteTask} key={i} index={i} text={task} />)
+				tasks.map(task => (
+					<Task deleteTask={deleteTask} key={task.id} task={task} />
+				))
 			) : (
 				<h2 style={{ textAlign: 'center' }}> Задач нет </h2>
 			)}

@@ -1,17 +1,19 @@
+import { FaRegCheckCircle } from 'react-icons/fa'
+import { RiDeleteBin2Line, RiTornadoLine } from 'react-icons/ri'
 import { ITask } from '../../types/task.types'
 import styles from './Task.module.css'
 
-const Task = ({text, index, deleteTask }:ITask) => {
+const Task = ({task, deleteTask }:ITask) => {
 	return (
-		<div onDoubleClick={() => deleteTask(index)} className={styles.task}>
+		<div onDoubleClick={() => deleteTask(task.id)} className={styles.task}>
 			<div className={styles.left}>
-				<img src='logo.png' alt='' />
-				<p>{text}</p>
+				<RiTornadoLine className={styles.todo} />
+				<p>{task.text}</p>
 			</div>
 
 			<div className={styles.right}>
-				<img onClick={() => deleteTask(index)} src='delete.png' alt='' />
-				<img src='complete.webp' alt='' />
+				<RiDeleteBin2Line className={styles.delete} onClick={() => deleteTask(task.id)}/>
+				<FaRegCheckCircle className={styles.check}/>
 			</div>
 		</div>
 	)

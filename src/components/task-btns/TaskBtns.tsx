@@ -4,8 +4,8 @@ import styles from './TaskBtns.module.css'
 const TaskBtns = ({ deleteAllTasks }) => {
 	return (
 		<div className={styles.btns}>
-			<SlRefresh className={styles.btn} />
-			<RiDeleteBin2Line onClick={() => deleteAllTasks()} className={styles.btn} />
+			<SlRefresh onClick={() => deleteAllTasks()} className={styles.btn} />
+			<RiDeleteBin2Line className={styles.btn} />
 		</div>
 	)
 }
