@@ -3,7 +3,7 @@ import { RiDeleteBin2Line, RiTornadoLine } from 'react-icons/ri'
 import { ITask } from '../../types/task.types'
 import styles from './Task.module.css'
 
-const Task = ({ task, deleteTask, deleteCompletedTask, toggleTask }: ITask) => {
+const Task = ({ task, deleteTask, toggleTask }: ITask) => {
 	return (
 		<div
 			className={`${styles.task} ${task.isCompleted ? styles.completed : ''} `}

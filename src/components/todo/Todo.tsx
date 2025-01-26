@@ -22,12 +22,16 @@ const Todo = () => {
 
 	const toggleTaskHandler = id => {
 		setTasks(
-			tasks.map(task => task.id === id ? { ...task, isCompleted: !task.isCompleted } : {...task})
+			tasks.map(task =>
+				task.id === id
+					? { ...task, isCompleted: !task.isCompleted }
+					: { ...task }
+			)
 		)
 	}
 
 	const deleteCompletedTaskHandler = () => {
-		setTasks(tasks.filter(task => task.isCompleted !== true))
+		setTasks(tasks.filter(task => !task.isCompleted ))
 	}
 
 	const deleteAllTasksHandler = () => {
@@ -39,11 +43,15 @@ const Todo = () => {
 			<h1>Todo App</h1>
 			<TaskForm addTask={addTaskHandler} />
 
-			{tasks.length > 0 && <TaskBtns deleteAllTasks={deleteAllTasksHandler} />}
+			{tasks.length > 0 && (
+				<TaskBtns
+					deleteCompletedTask={deleteCompletedTaskHandler}
+					deleteAllTasks={deleteAllTasksHandler}
+				/>
+			)}
 
 			<TaskList
 				tasks={tasks}
-				deleteCompletedTask={deleteCompletedTaskHandler}
 				deleteTask={deleteTaskHandler}
 				toggleTask={toggleTaskHandler}
 			/>
