@@ -12,7 +12,6 @@ interface Props {
 const TaskList = ({
 	tasks,
 	deleteTask,
-	deleteCompletedTask,
 	toggleTask,
 }: Props) => {
 	return (
@@ -20,7 +19,6 @@ const TaskList = ({
 			{tasks.length ? (
 				tasks.map(task => (
 					<Task
-						deleteCompletedTask={deleteCompletedTask}
 						deleteTask={deleteTask}
 						toggleTask={toggleTask}
 						key={task.id}
